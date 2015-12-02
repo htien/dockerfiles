@@ -5,7 +5,7 @@
 
 set -e
 
-docker run --name test_nginx -itdP --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /data:/data -v /www:/www -v /var/log/nginx:/var/log/nginx tien/debian-nginx-php
+docker run -itdP --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /data:/data -v /www:/www -v /var/log/nginx:/var/log/nginx tien/debian-nginx-php
 
 CONTAINER_ID=$(docker ps -lq)
 
