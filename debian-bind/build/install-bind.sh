@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Docker Maintainers <docker-maint@echip.io>
 #
@@ -11,7 +11,7 @@ set -e
 ## BIND INSTALLATION.
 ##
 
-apt-get install -y bind9
+apt-get install -y bind9 dnsutils
 
 
 ##
@@ -19,7 +19,7 @@ apt-get install -y bind9
 ##
 
 # Remove default /etc/bind configuration directory.
-mv /etc/bind /etc/bind.origin && chmod -R o= /etc/bind.origin/
+mv /etc/bind /etc/bind.origin
 ln -s /data/etc/bind /etc/
 
 systemctl enable bind9

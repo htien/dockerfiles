@@ -25,7 +25,5 @@ VOLUME ["/data"]
 
 EXPOSE 53/udp
 
-CMD ["/bin/bash"]
-
 ONBUILD RUN apt-get update
 

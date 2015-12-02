@@ -1,8 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
+#
+# @filename: run-test.sh
+#
 
 set -e
 
-docker run -itdP --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /data:/data -v /www:/www -v /var/log/nginx:/var/log/nginx tien/docker-nginx-php
+docker run -itdP --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /data:/data tien/debian-bind
 
 CONTAINER_ID=$(docker ps -lq)
 
