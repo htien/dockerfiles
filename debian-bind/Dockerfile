@@ -1,4 +1,4 @@
-FROM maint/debian-systemd:latest
+FROM maint/debian:latest
 
 MAINTAINER DNS Docker Maintainers <docker-maint@echip.io>
 
@@ -24,6 +24,8 @@ RUN \
 VOLUME ["/data"]
 
 EXPOSE 53/udp
+
+CMD ["/usr/sbin/named", "-u", "bind", "-g"]
 
 ONBUILD RUN apt-get update
 

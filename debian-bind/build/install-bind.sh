@@ -22,5 +22,7 @@ apt-get install -y bind9 dnsutils
 mv /etc/bind /etc/bind.origin
 ln -s /data/etc/bind /etc/
 
-systemctl enable bind9
+# Fix: Permission denied for mkdir /var/run/named.
+mkdir -m 770 /var/run/named
+chgrp bind /var/run/named
 

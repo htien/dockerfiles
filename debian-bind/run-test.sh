@@ -5,7 +5,7 @@
 
 set -e
 
-docker run -itdP --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /data:/data tien/debian-bind
+docker run -itdP -v /data:/data tien/debian-bind
 
 CONTAINER_ID=$(docker ps -lq)
 
